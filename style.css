@@ -285,6 +285,19 @@ main {
   gap: 24px;
   text-align: center;
 }
+.cv-button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 6px 14px;
+  background-color: #e0b14b;
+  color: #fff;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.25s ease;
+}
+
+
 
 .gallery-item img {
   width: 100%;
