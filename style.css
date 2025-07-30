@@ -76,6 +76,24 @@ body {
   border-bottom-color: #E0B14B;
 }
 
+.nav-social-icons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding-right: 1rem;
+}
+
+.nav-social-icons a {
+  color: #444;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+.nav-social-icons a:hover {
+  color: #559dc4; /* highlight color */
+}
+
 /* Header */
 header {
   padding: 30px 0 15px;
@@ -93,7 +111,7 @@ header h1 {
   letter-spacing: 1px;
 }
 
-/* Navigation */
+/* Navigation inside header */
 nav ul {
   list-style: none;
   display: flex;
@@ -133,19 +151,22 @@ main {
   font-weight: 500;
 }
 
-/* ========== Updated About Section ========== */
-.about {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
+/* About Section */
+.about,
+.president-word,
+.literary-section {
   background-color: #fffdf9;
   padding: 60px 30px;
   border-radius: 20px;
   box-shadow: 0 8px 24px rgba(224, 177, 75, 0.15);
   margin-bottom: 80px;
+  max-width: 1024px;
+  margin-inline: auto;
 }
 
-.about h2 {
+.about h2,
+.president-word h2,
+.literary-section h2 {
   font-size: 2.4rem;
   font-weight: 800;
   color: #005A9C;
@@ -154,7 +175,9 @@ main {
   position: relative;
 }
 
-.about h2::after {
+.about h2::after,
+.president-word h2::after,
+.literary-section h2::after {
   content: "";
   display: block;
   width: 80px;
@@ -164,18 +187,22 @@ main {
   border-radius: 3px;
 }
 
-.about p {
+.about p,
+.president-text p,
+.literary-section p {
   font-size: 1.2rem;
   line-height: 2.2;
   color: #333333;
   margin-bottom: 24px;
   text-align: justify;
-  padding: 0 15px;
   position: relative;
   font-weight: 400;
+  padding: 0 10-15px;
 }
 
-.about p::before {
+.about p::before,
+.president-text p::before,
+.literary-section p::before {
   content: "❝";
   font-size: 2rem;
   color: #E0B14B;
@@ -185,7 +212,9 @@ main {
   font-family: serif;
 }
 
-.about p:last-of-type::after {
+.about p:last-of-type::after,
+.president-text p:last-of-type::after,
+.literary-section p:last-of-type::after {
   content: "❞";
   font-size: 2rem;
   color: #E0B14B;
@@ -195,7 +224,7 @@ main {
   font-family: serif;
 }
 
-/* ========== Honorary President ========== */
+/* Honorary President */
 .honorary {
   margin-bottom: 70px;
 }
@@ -271,26 +300,25 @@ main {
   font-weight: 700;
 }
 
-/* President Word section */
-/* President Word section (Styled like About) */
-.president-word {
-  background-color: #fffdf9;
+/* Team Section */
+.team-section {
+  margin-bottom: 80px;
+  background: #fffdf9;
   padding: 60px 30px;
   border-radius: 20px;
   box-shadow: 0 8px 24px rgba(224, 177, 75, 0.15);
-  margin-bottom: 80px;
 }
 
-.president-word h2 {
-  font-size: 2.4rem;
-  font-weight: 800;
-  color: #005A9C;
+.team-section h2 {
   text-align: center;
-  margin-bottom: 30px;
+  font-size: 2.3rem;
+  color: #005A9C;
+  font-weight: 800;
+  margin-bottom: 40px;
   position: relative;
 }
 
-.president-word h2::after {
+.team-section h2::after {
   content: "";
   display: block;
   width: 80px;
@@ -300,48 +328,160 @@ main {
   border-radius: 3px;
 }
 
-.president-text p {
-  font-size: 1.2rem;
-  line-height: 2.2;
-  color: #333333;
-  margin-bottom: 24px;
-  text-align: justify;
-  padding: 0 15px;
-  position: relative;
-  font-weight: 400;
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.president-text p::before {
-  content: "❝";
-  font-size: 2rem;
+/* Reset all cards to auto positioning first */
+.cards-grid > .card {
+  grid-column: auto;
+}
+
+/* Center last 3 cards (cards 5, 6, 7) */
+.cards-grid > .card:nth-child(5) {
+  grid-column: 2;
+}
+.cards-grid > .card:nth-child(6) {
+  grid-column: 3;
+}
+.cards-grid > .card:nth-child(7) {
+  grid-column: 4;
+}
+
+
+
+/* Card style */
+.card {
+  background-color: #fff;
+  border: 1px solid #e4e4e4;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  margin-top: 10px;
+  color: #2b2b2b;
+  font-size: 1.1rem;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.card a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #1a4ea0;
+  text-decoration: none;
+  font-size: 0.9rem;
+  border-bottom: 1px dotted #1a4ea0;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.card a:hover {
   color: #E0B14B;
-  position: absolute;
-  right: -10px;
-  top: -10px;
-  font-family: serif;
+  border-bottom-color: #E0B14B;
 }
 
-.president-text p:last-of-type::after {
-  content: "❞";
-  font-size: 2rem;
-  color: #E0B14B;
-  position: absolute;
-  left: -10px;
-  bottom: -10px;
-  font-family: serif;
+/* Profile image */
+.profile-img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  border: 4px solid #E0B14B;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
 }
-
 
 /* Footer */
-footer {
-  background-color: #005A9C;
-  color: #F3E5AB;
+.site-footer {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  padding: 40px 0 20px;
+  font-family: 'Cairo', sans-serif;
+  text-align: right;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.footer-section {
+  flex: 1 1 250px;
+}
+
+.footer-section h4 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: #E0B14B;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #E0B14B;
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.social-links a img {
+  width: 28px;
+  height: 28px;
+  transition: transform 0.3s ease;
+}
+
+.social-links a:hover img {
+  transform: scale(1.2);
+}
+.card-row-center {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.footer-bottom {
+  border-top: 1px solid #444;
+  margin-top: 30px;
+  padding-top: 15px;
   text-align: center;
-  padding: 20px 0;
-  font-size: 1rem;
-  font-weight: 500;
-  letter-spacing: 0.03em;
-  box-shadow: 0 -3px 8px rgb(224 177 75 / 0.3);
+  font-size: 14px;
+  color: #ccc;
 }
 
 /* Responsive */
@@ -367,12 +507,39 @@ footer {
   }
 }
 
+@media (max-width: 768px) {
+  .cards-grid {
+    grid-template-columns: 1fr; /* Single column cards */
+  }
+}
+
 @media (max-width: 400px) {
   header h1 {
     font-size: 2rem;
   }
-
-  nav ul li a {
-    font-size: 1rem;
+  .nav-links {
+    flex-direction: column;
+    gap: 15px;
   }
 }
+.cards-grid-1 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+  gap: 20px; /* space between cards */
+  max-width: 1200px; /* optional, limits container width */
+  margin: 0 auto; /* center container horizontally */
+}
+.card-1 {
+  background: #f9f9f9;
+  padding: 15px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.profile-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 50%; /* circular images if you want */
+  margin-bottom: 10px;
+}
+
