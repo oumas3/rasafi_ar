@@ -6,13 +6,34 @@
 }
 
 /* Body and container */
+
+
 body {
-  font-family: 'Cairo', sans-serif;
-  background-color: #FAF9F6;
-  color: #2C2C2C;
-  direction: rtl;
-  line-height: 1.75;
+  position: relative;
+  background-color: #f7f1e1;
 }
+
+body::before {
+  content: "";
+  position: fixed; /* or absolute relative to body */
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url('img/633.jpg'); /* Path to your background image */
+  background-repeat: repeat;
+  opacity: 0.15;  /* adjust transparency */
+  pointer-events: none; /* so it doesn’t block clicks */
+  z-index: 0;
+  background-repeat: no-repeat;
+background-position: center;
+background-size: cover; /* or specify exact size */
+
+}
+
+/* make sure your content has a higher z-index */
+main, header, footer {
+  position: relative;
+  z-index: 1;
+}
+
 
 .container {
   max-width: 1024px;
@@ -46,11 +67,19 @@ body {
   width: auto;
   border-radius: 8px;
 }
+nav {
+  font-family: 'Cairo', 'Amiri', serif;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #2e2e2e; /* dark but soft color */
+}
 
 .site-title {
   font-size: 1.6rem;
   font-weight: 700;
   color: #005A9C;
+    font-family: 'Cairo', 'Amiri', serif;
+
 }
 
 /* Nav links */
@@ -70,6 +99,15 @@ body {
   padding-bottom: 5px;
   transition: all 0.3s ease;
 }
+/* Entire navbar container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  flex-wrap: wrap;
+}
+
 
 .nav-links li a:hover {
   color: #E0B14B;
@@ -81,6 +119,8 @@ body {
   gap: 1rem;
   align-items: center;
   padding-right: 1rem;
+  display: flex;
+
 }
 
 .nav-social-icons a {
@@ -88,11 +128,13 @@ body {
   font-size: 1.2rem;
   transition: color 0.3s ease;
   text-decoration: none;
+
 }
 
 .nav-social-icons a:hover {
   color: #559dc4; /* highlight color */
 }
+
 
 /* Header */
 header {
@@ -682,10 +724,103 @@ main {
   top: 20px;
   left: 20px;
   z-index: 10;
+  
 }
 
 .logo-corner img {
   width: 100px;
   height: auto;
+    border-radius: 70%; /* 🔁 makes it a circle */
+
+  
 }
+.goals-list {
+  list-style: none;
+  padding-right: 25px;
+  font-size: 1.15rem;
+  color: #333;
+  line-height: 2.2;
+  margin-bottom: 30px;
+}
+
+.goals-list li {
+  position: relative;
+  padding-right: 25px;
+  margin-bottom: 12px;
+}
+
+.goals-list li::before {
+  content: "✓";
+  position: absolute;
+  right: 0;
+  color: #E0B14B;
+  font-weight: bold;
+}
+.festival-presentation {
+  text-align: center;
+  margin: 40px auto;
+}
+.festival-description {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.presentation-button {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 20px;
+  font-size: 1.1rem;
+  color: #000;
+  background-color: #f1e9dc;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.presentation-button:hover {
+  background-color: #e0b14b;
+  color: #fff;
+  border-color: #d4a637;
+}
+.festival-presentation {
+  text-align: center;
+  margin: 60px auto;
+  max-width: 800px;
+  padding: 30px 20px;
+  background-color: #f9f9f9;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+}
+
+.festival-presentation h3 {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.festival-presentation p {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.festival-presentation .presentation-button {
+  background-color: #005A9C;
+  color: #fff;
+  padding: 10px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.festival-presentation .presentation-button:hover {
+  background-color: #E0B14B;
+}
+
+
 
