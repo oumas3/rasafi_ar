@@ -1,0 +1,378 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body and container */
+body {
+  font-family: 'Cairo', sans-serif;
+  background-color: #FAF9F6;
+  color: #2C2C2C;
+  direction: rtl;
+  line-height: 1.75;
+}
+
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Navbar layout */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px 0;
+}
+
+.site-branding {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo {
+  height: 50px;
+  width: auto;
+  border-radius: 8px;
+}
+
+.site-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #005A9C;
+}
+
+/* Nav links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #005A9C;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 5px;
+  transition: all 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #E0B14B;
+  border-bottom-color: #E0B14B;
+}
+
+/* Header */
+header {
+  padding: 30px 0 15px;
+  border-bottom: 1.5px solid #E0B14B;
+  background: #fff;
+  box-shadow: 0 2px 6px rgb(224 177 75 / 0.2);
+}
+
+header h1 {
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #005A9C;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+/* Navigation */
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+nav ul li a {
+  color: #005A9C;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1.15rem;
+  padding: 8px 0;
+  border-bottom: 3px solid transparent;
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+  border-bottom-color: #E0B14B;
+  color: #E0B14B;
+}
+
+/* Main sections */
+main {
+  padding: 40px 0 60px;
+}
+
+/* Welcome */
+.welcome p {
+  font-size: 1.35rem;
+  text-align: center;
+  color: #4a4a4a;
+  max-width: 700px;
+  margin: 0 auto 50px;
+  font-weight: 500;
+}
+
+/* ========== Updated About Section ========== */
+.about {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  background-color: #fffdf9;
+  padding: 60px 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(224, 177, 75, 0.15);
+  margin-bottom: 80px;
+}
+
+.about h2 {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #005A9C;
+  text-align: center;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.about h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background-color: #E0B14B;
+  margin: 12px auto 0;
+  border-radius: 3px;
+}
+
+.about p {
+  font-size: 1.2rem;
+  line-height: 2.2;
+  color: #333333;
+  margin-bottom: 24px;
+  text-align: justify;
+  padding: 0 15px;
+  position: relative;
+  font-weight: 400;
+}
+
+.about p::before {
+  content: "❝";
+  font-size: 2rem;
+  color: #E0B14B;
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  font-family: serif;
+}
+
+.about p:last-of-type::after {
+  content: "❞";
+  font-size: 2rem;
+  color: #E0B14B;
+  position: absolute;
+  left: -10px;
+  bottom: -10px;
+  font-family: serif;
+}
+
+/* ========== Honorary President ========== */
+.honorary {
+  margin-bottom: 70px;
+}
+
+.honorary h2 {
+  color: #005A9C;
+  font-size: 2.3rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.honorary-content {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.photo-placeholder {
+  width: 260px;
+  height: 260px;
+  background-color: #E0B14B;
+  color: #005A9C;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  border-radius: 18px;
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 15px;
+  box-shadow: 0 5px 15px rgb(224 177 75 / 0.4);
+}
+
+.bio {
+  flex: 1 1 460px;
+  font-size: 1.15rem;
+  background: #fff;
+  border-radius: 14px;
+  padding: 25px 30px;
+  box-shadow: 0 4px 10px rgb(0 0 0 / 0.12);
+  line-height: 1.6;
+}
+
+/* Committees section */
+.committees {
+  display: flex;
+  gap: 35px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 70px;
+}
+
+.committees article {
+  background: #fff;
+  border-radius: 14px;
+  padding: 25px 30px;
+  flex: 1 1 28%;
+  box-shadow: 0 4px 10px rgb(0 0 0 / 0.12);
+  transition: box-shadow 0.3s ease;
+}
+
+.committees article:hover {
+  box-shadow: 0 8px 20px rgb(224 177 75 / 0.3);
+}
+
+.committees h2 {
+  color: #005A9C;
+  margin-bottom: 15px;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+/* President Word section */
+/* President Word section (Styled like About) */
+.president-word {
+  background-color: #fffdf9;
+  padding: 60px 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(224, 177, 75, 0.15);
+  margin-bottom: 80px;
+}
+
+.president-word h2 {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #005A9C;
+  text-align: center;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.president-word h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background-color: #E0B14B;
+  margin: 12px auto 0;
+  border-radius: 3px;
+}
+
+.president-text p {
+  font-size: 1.2rem;
+  line-height: 2.2;
+  color: #333333;
+  margin-bottom: 24px;
+  text-align: justify;
+  padding: 0 15px;
+  position: relative;
+  font-weight: 400;
+}
+
+.president-text p::before {
+  content: "❝";
+  font-size: 2rem;
+  color: #E0B14B;
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  font-family: serif;
+}
+
+.president-text p:last-of-type::after {
+  content: "❞";
+  font-size: 2rem;
+  color: #E0B14B;
+  position: absolute;
+  left: -10px;
+  bottom: -10px;
+  font-family: serif;
+}
+
+
+/* Footer */
+footer {
+  background-color: #005A9C;
+  color: #F3E5AB;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  box-shadow: 0 -3px 8px rgb(224 177 75 / 0.3);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .about,
+  .committees,
+  .honorary-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul {
+    gap: 20px;
+  }
+
+  .committees article,
+  .about article {
+    flex: 1 1 90%;
+  }
+
+  .bio {
+    flex: 1 1 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  nav ul li a {
+    font-size: 1rem;
+  }
+}
