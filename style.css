@@ -648,6 +648,63 @@ main {
     grid-template-columns: 1fr; /* Single column cards */
   }
 }
+.cards-grid,
+.cards-grid-1 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+@media (max-width: 768px) {
+  .hero-slider {
+    height: 60vh;
+  }
+
+  .hero-slider .slide {
+    object-fit: cover;
+  }
+}
+@media (max-width: 768px) {
+  .navbar,
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .nav-social-icons {
+    justify-content: center;
+    padding: 10px 0;
+  }
+
+  .committees {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .team-section {
+    padding: 30px 15px;
+  }
+}
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  .about h2,
+  .team-section h2,
+  .honorary h2 {
+    font-size: 1.6rem;
+  }
+
+  .about p,
+  .bio,
+  .goals-list {
+    font-size: 1rem;
+  }
+}
+
 
 @media (max-width: 400px) {
   header h1 {
@@ -821,6 +878,53 @@ main {
 .festival-presentation .presentation-button:hover {
   background-color: #E0B14B;
 }
+@media (max-width: 500px) {
+  .site-title {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+    width: 100%;
+    padding: 0;
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links li a {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .hero-slider {
+    height: 80vh;
+  }
+
+  .logo-corner img {
+    width: 70px;
+  }
+
+  .goals-list {
+    font-size: 1rem;
+    padding-right: 15px;
+  }
+
+  .festival-presentation {
+    padding: 20px 15px;
+  }
+}
+
 
 
 
