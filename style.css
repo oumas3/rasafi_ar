@@ -514,7 +514,12 @@ main {
   margin: 0 auto 15px;
 }
 
-
+.profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 
 /* Card style */
 .card {
