@@ -393,19 +393,24 @@
 </section>
 
 
+
 <!-- New Section for Festival Presentation -->
 
 
-<div class="festival-presentation centered-pdf">
+<div class="festival-presentation centered-pdf" id="spring-festival">
   <h3>عرض تقديمي حول المهرجان</h3>
   <p class="festival-description">
     للمزيد من المعلومات حول مهرجان آسفي الدولي ربيع الشعر، يمكنكم تحميل العرض التعريفي الذي يتضمن نبذة عن رؤيته، أهدافه، محطاته السابقة، وضيوفه المكرمين.
   </p>
-  <a href="cv/تقرير مفصل عن فعاليات الدورة الثالثة لمهرجان اسفي الدولي ربيع الشعر (3).pdf" target="_blank" class="cv-button presentation-button">
+  <a href="cv/تقرير مفصل عن فعاليات الدورة الثالثة لمهرجان اسفي الدولي ربيع الشعر (3).pdf" class="cv-button presentation-button" id="presentation-button">
     ↗ تحميل العرض التعريفي
   </a>
   
+  <!-- Hidden iframe to show PDF -->
+  <iframe id="presentation-iframe" src="" style="display:none; width:100%; height:600px; border:none; margin-top:15px;"></iframe>
 </div>
+
+
 
 
   </div>
@@ -446,8 +451,7 @@
       <h4>اتصل بنا</h4>
       <p>آسفي، المغرب</p>
      <p dir="ltr">+212 6 17 82 68 82</p>
-     <p dir="ltr">info@forumraasafi.org</p>
-
+      
     </div>
 
   </div>
@@ -456,50 +460,10 @@
     <p>© 2025 منتدى رع للثقافة والإبداع بآسفي - جميع الحقوق محفوظة</p>
   </div>
 </footer>
-
-<script>
-  // Select all CV buttons
-  const cvButtons = document.querySelectorAll('.cv-button');
-  const viewerSection = document.getElementById('cv-viewer-section');
-  const iframe = document.getElementById('cv-frame');
-
-  cvButtons.forEach(button => {
-    button.addEventListener('click', function(e) {
-      e.preventDefault(); // Prevent link from opening normally
-      const pdfUrl = this.getAttribute('href'); // Get PDF URL
-
-      iframe.src = pdfUrl; // Set iframe src to PDF URL
-      viewerSection.style.display = 'block'; // Show the viewer section
-
-      // Scroll smoothly to the viewer section
-      viewerSection.scrollIntoView({ behavior: 'smooth' });
-    });
-  });
-</script>
-
-<script>
-  let slideIndex = 0;
-  const slides = document.querySelectorAll(".slide");
-
-  function showSlides() {
-    slides.forEach((slide, i) => {
-      slide.classList.remove("active");
-    });
-    slideIndex = (slideIndex + 1) % slides.length;
-    slides[slideIndex].classList.add("active");
-  }
-
-  setInterval(showSlides, 4000); // Every 4 seconds
-</script>
-<script>
-  const burger = document.querySelector(".burger");
-  const nav = document.querySelector("nav");
-
-  burger.addEventListener("click", () => {
-    nav.classList.toggle("open");
-  });
-</script>
-
+<script src="js/cv-viewer.js"></script>
+<script src="js/slider.js"></script>
+<script src="js/nav-toggle.js"></script>
+<script src="js/ppt-button.js"></script>
 
 
 </body>
