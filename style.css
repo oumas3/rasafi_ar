@@ -2,6 +2,7 @@
 * {
   margin: 0;
   padding: 0;
+
   box-sizing: border-box;
 }
 
@@ -11,6 +12,7 @@
 body {
   position: relative;
   background-color: #f7f1e1;
+  margin: 0;
 }
 
 body::before {
@@ -34,6 +36,23 @@ main, header, footer {
   z-index: 1;
 }
 
+/* Reset default margins and paddings */
+body, header, .navbar, .slider {
+  margin: 0;
+  padding: 0;
+}
+
+/* Ensure the navbar and slider are flush with each other */
+header, .navbar, .slider {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+main {
+  margin: 0;
+  padding: 0;
+}
+
+
 
 .container {
   max-width: 1024px;
@@ -43,17 +62,21 @@ main, header, footer {
 
 /* Navbar layout */
 .navbar {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 20px;
+  padding-right: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  padding: 20px 0;
+  padding: 1rem 20px; /* or 20px 20px */
 }
 
 .site-branding {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 10px;
 }
 
 .logo-link {
@@ -72,7 +95,8 @@ nav {
   font-family: 'Cairo', 'Amiri', serif;
   font-weight: 600;
   font-size: 1.2rem;
-  color: #2e2e2e; /* dark but soft color */
+  color: #2e2e2e; /* dark
+   but soft color */
 }
 
 .site-title {
@@ -86,6 +110,7 @@ nav {
 header {
   position: relative;
   z-index: 1000;
+
 }
 
 /* 2. Style nav to overlay over slider on mobile */
@@ -96,6 +121,7 @@ header {
 .slider {
   position: relative;
   z-index: 10;
+  
 }
 
 
@@ -801,8 +827,10 @@ main {
   width: 100%;
   height: 150vh; /* 👈 increase to 90-100vh */
   overflow: hidden;
-  margin-bottom: 60px;
+  margin-bottom: 70px;
+  
 }
+
 .slider-overlay {
   position: absolute;
   top: 0;
@@ -830,6 +858,30 @@ main {
   opacity: 0;
   transition: opacity 1s ease-in-out;
   background-color: #000; /* optional: black background around the image */
+}
+main, #hero-slider {
+  margin: 0;
+  padding: 0;
+}
+.cards-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.cards-grid .card {
+  flex: 1 1 250px; /* grow and shrink with minimum width */
+  max-width: 300px; /* optional */
+}
+
+@media (max-width: 768px) {
+  .cards-grid {
+    flex-direction: column;
+  }
+
+  .cards-grid .card {
+    max-width: 100%;
+  }
 }
 
 
