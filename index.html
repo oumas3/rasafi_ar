@@ -8,6 +8,8 @@
   <link rel="icon" href="img/logo raa-1.png" type="image/x-icon" />
   <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet" />
+
 
 </head>
 <body>
@@ -20,6 +22,12 @@
         <span class="site-title">منتدى رع للثقافة والإبداع بآسفي</span>
       </a>
     </div>
+      <!-- Burger button for mobile -->
+  <button class="burger" aria-label="قائمة التنقل">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
     <nav>
       <ul class="nav-links">
         <li><a href="#about">من نحن</a></li>
@@ -35,7 +43,7 @@
   <div class="nav-social-icons">
     <a href="https://www.facebook.com/share/1aSLw31hR6/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
     <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-    <a href="mailto:raaforum@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+    <a href="mailto:info@forumraasafi.org" aria-label="Email"><i class="fas fa-envelope"></i></a>
   </div>
   </div>
 </header>
@@ -173,6 +181,8 @@
 
    <section id="executive-office" class="team-section container">
   <h2>المكتب التنفيذي</h2>
+    <div class="committee-members">
+
   <div class="cards-grid">
 
     <div class="card">
@@ -216,7 +226,7 @@
       <h3>مستشارة</h3>
       <p>مليكة ضريبين</p>
     </div>
-
+  </div>
   </div>
 </section>
 
@@ -380,7 +390,7 @@
        <div class="nav-social-icons">
     <a href="https://www.facebook.com/share/1aSLw31hR6/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
     <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-    <a href="mailto:raaforum@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+    <a href="mailto:info@forumraasafi.org" aria-label="Email"><i class="fas fa-envelope"></i></a>
   </div>
     </div>
 
@@ -414,6 +424,16 @@
 
   setInterval(showSlides, 4000); // Every 4 seconds
 </script>
+<script>
+  const burger = document.querySelector(".burger");
+  const nav = document.querySelector("nav");
+
+  burger.addEventListener("click", () => {
+    nav.classList.toggle("open");
+  });
+</script>
+
+
 
 </body>
 </html>

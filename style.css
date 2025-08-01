@@ -63,10 +63,11 @@ main, header, footer {
 }
 
 .logo {
-  height: 50px;
-  width: auto;
+  height: 30px;
+  width: 30px;
   border-radius: 8px;
 }
+
 nav {
   font-family: 'Cairo', 'Amiri', serif;
   font-weight: 600;
@@ -81,6 +82,22 @@ nav {
     font-family: 'Cairo', 'Amiri', serif;
 
 }
+/* 1. Ensure header/nav are on top */
+header {
+  position: relative;
+  z-index: 1000;
+}
+
+/* 2. Style nav to overlay over slider on mobile */
+
+/* 3. Responsive nav menu */
+
+/* 4. Lower z-index for the slider */
+.slider {
+  position: relative;
+  z-index: 10;
+}
+
 
 /* Nav links */
 .nav-links {
@@ -924,7 +941,288 @@ main {
     padding: 20px 15px;
   }
 }
+/* ========== Mobile Responsive Enhancements ========== */
 
+/* Navbar - Stack nav links vertically on small screens with better spacing */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
 
+  .site-branding {
+    margin-bottom: 1rem;
+  }
 
+  /* Nav links become vertical and full width */
+  .nav-links {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links li a {
+    display: block;
+    width: 100%;
+    padding: 12px 10px;
+    font-size: 1.1rem;
+    border-bottom: 1px solid transparent;
+  }
+
+  .nav-links li a:hover,
+  .nav-links li a:focus {
+    border-bottom-color: #E0B14B;
+  }
+
+  .nav-social-icons {
+    justify-content: flex-start;
+    padding: 10px 0 0 0;
+    width: 100%;
+  }
+}
+
+/* Slightly smaller fonts on very small devices */
+@media (max-width: 400px) {
+  body {
+    font-size: 14px;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  .site-title {
+    font-size: 1.2rem;
+  }
+
+  nav {
+    font-size: 1rem;
+  }
+
+  .about h2,
+  .president-word h2,
+  .literary-section h2,
+  .honorary h2,
+  .team-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .about p,
+  .bio,
+  .committees article,
+  .card p,
+  .goals-list,
+  .festival-description {
+    font-size: 0.95rem;
+  }
+
+  .festival-presentation h3 {
+    font-size: 1.3rem;
+  }
+
+  .presentation-button {
+    font-size: 0.9rem;
+    padding: 10px 16px;
+  }
+}
+
+/* Make images responsive and not overflow */
+img, .logo, .profile-img, .honorary-img, .gallery-item img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Grid adjustments for smaller screens */
+@media (max-width: 768px) {
+  .cards-grid, .cards-grid-1 {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+
+  .committees {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .honorary-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .bio {
+    text-align: center;
+    flex: 1 1 100%;
+  }
+
+  .team-section {
+    padding: 30px 15px;
+  }
+}
+
+/* Avoid horizontal overflow for all sections */
+body, html {
+  overflow-x: hidden;
+}
+
+/* Optional: Improve tap target sizes */
+.nav-links li a,
+.nav-social-icons a,
+.cv-button,
+.presentation-button {
+  min-height: 40px;
+  line-height: 40px;
+  border-radius: 6px;
+}
+
+/* Optional: Smooth scroll behavior for better UX */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Optional: Better padding for main on mobile */
+@media (max-width: 600px) {
+  main {
+    padding: 20px 10px 40px;
+  }
+}
+/* Apply Cairo font globally */
+body, main, header, footer, section, article, nav, div, p, h1, h2, h3, h4, h5, h6, ul, li, a, span {
+  font-family: 'Cairo', 'Amiri', serif!important;
+}
+/* Burger button styling */
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 22px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 20;
+}
+
+.burger span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #005A9C; /* you can change color */
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+/* Make navbar fixed or relative with high z-index */
+.navbar {
+  position: relative; /* or fixed if you want sticky */
+  z-index: 1000; /* high enough to overlay slideshow */
+}
+
+/* Nav dropdown on mobile */
+@media (max-width: 768px) {
+  nav {
+    position: absolute;
+    top: 100%;
+    right: 0; /* because you have dir=rtl */
+    width: 100%;
+    background-color: #fffdf9;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);   
+    max-height: 0;
+    z-index: 1100; /* good */
+  }
+
+  nav.open {
+    max-height: 500px;
+  }
+
+  nav.open {
+    max-height: 500px;
+  }
+}
+
+/* Check your slideshow */
+.hero-slider {
+  position: relative; /* if not already */
+  z-index: 10; /* low to allow navbar above */
+}
+
+/* Show burger on smaller screens */
+@media (max-width: 768px) {
+  .burger {
+    display: flex;
+     position: relative; /* or absolute/fixed if needed */
+  z-index: 1010; /
+  }
+  
+
+  .nav-links {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px 20px;
+  }
+
+  .navbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+  /* Social icons alignment on mobile */
+  .nav-social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px 0;
+    width: 100%;
+  }
+
+  /* Navbar layout adjustments */
+  .navbar {
+    position: relative;
+    flex-wrap: nowrap;
+    
+  }
+}
+
+/* Align social icons horizontally on desktop */
+.nav-social-icons {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+/* Social icon links style */
+.nav-social-icons a {
+  color: #444;
+  font-size: 1.4rem;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+.nav-social-icons a:hover {
+  color: #559dc4;
+}
+.burger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
 
